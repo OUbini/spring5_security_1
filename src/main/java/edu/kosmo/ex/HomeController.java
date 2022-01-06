@@ -40,10 +40,20 @@ public class HomeController {
 		return "home";
 	}
 	
+	@GetMapping("/user/userHome")
+	public void userHome() {		
+		log.info("userHome...");
+	}
+	
+	@GetMapping("/admin/adminHome")
+	public void adminHome() {	
+		log.info("adminHome...");
+	}
+	
 	@GetMapping("/login/loginForm")
 	public String loginForm() {
 		
-		System.out.println("Welcome Login Form");
+		log.info("Welcome Login Form");
 
 		return "login/loginForm2";
 
