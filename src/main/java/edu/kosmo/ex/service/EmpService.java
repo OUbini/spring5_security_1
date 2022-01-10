@@ -15,14 +15,14 @@ public class EmpService {
 	@Inject
 	private EmpMapper empMapper;
 
-	public EmpVO getUser(String empNo) {
+	public EmpVO getUser(String ename) {
+		log.info("readUser .. ");
 
-		log.info("readUser ..");
+		EmpVO empVO = empMapper.readUser(ename);
+		
+		empVO.setAuthList(empMapper.readAuthority(ename));
 
-		return empMapper.readUser(empNo);
-
+		return empVO;
 	}
-
-
 
 }
